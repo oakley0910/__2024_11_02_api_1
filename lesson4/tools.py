@@ -61,3 +61,30 @@ def BMI_math(height_cm:float, weight_kg:float)->tuple[float,str]:
     bmi_kg_m2 = round(weight_kg/(height_m**2), 2)
     bmi_str = get_status(bmi_kg_m2)
     return bmi_kg_m2, bmi_str
+
+class BMI:
+    def __init__(self, name, height, weight):
+        self.name = name
+        self.height = height 
+        self.weight = weight
+
+    def get_BMI(self):
+        height_in_meters = self.height / 100
+        bmi = self.weight / (height_in_meters ** 2)
+        return round(bmi, 2)
+
+    def get_status(self):
+        bmi_value = self.get_BMI()
+        if bmi_value < 18.5:
+            return "你是一隻瘦皮猴~"
+        elif 18.5 <= bmi_value < 24:
+            return "嘟嘟好~"
+        elif 24 <= bmi_value < 27:
+            return "有一點超重喔~"
+        elif 27 <= bmi_value < 30:
+            return "輕量級胖胖~"
+        elif 30 <= bmi_value < 35:
+            return "中量級胖胖~"
+        else:
+            return "重量級胖胖~"
+        
