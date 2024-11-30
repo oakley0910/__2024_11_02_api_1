@@ -62,6 +62,7 @@ def BMI_math(height_cm:float, weight_kg:float)->tuple[float,str]:
     bmi_str = get_status(bmi_kg_m2)
     return bmi_kg_m2, bmi_str
 
+
 class BMI:
     def __init__(self, name, height, weight):
         self.name = name
@@ -87,4 +88,5 @@ class BMI:
             return "中量級胖胖~"
         else:
             return "重量級胖胖~"
+
         
